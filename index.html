@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q弹 Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">✨ Q弹 Todo List</h1>
+            <p class="subtitle">让任务管理变得有趣</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    class="todo-input" 
+                    placeholder="添加新的任务..."
+                    maxlength="100"
+                >
+                <button id="addBtn" class="add-btn">
+                    <span class="add-icon">+</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="todo-stats">
+            <span id="todoCount" class="todo-count">0 个任务</span>
+            <span id="completedCount" class="completed-count">0 个已完成</span>
+        </div>
+        
+        <div class="todo-container">
+            <ul id="todoList" class="todo-list">
+                <!-- Todo 项目将在这里动态生成 -->
+            </ul>
+        </div>
+        
+        <div class="empty-state" id="emptyState">
+            <div class="empty-icon">📝</div>
+            <p>还没有任务，开始添加吧！</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
