@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日英语学习 - 20个单词打卡</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🌸 每日英语学习</h1>
+            <div class="progress-info">
+                <span class="date" id="currentDate"></span>
+                <span class="progress" id="progressText">今日进度: 0/20</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="word-card" id="wordCard">
+                <div class="word-section">
+                    <h2 class="word" id="currentWord">Welcome</h2>
+                    <div class="phonetic" id="phonetic">/ˈwelkəm/</div>
+                    <button class="play-btn" id="playBtn">🔊</button>
+                </div>
+                
+                <div class="meaning-section">
+                    <h3 class="meaning" id="meaning">欢迎</h3>
+                    <div class="example" id="example">Welcome to our English learning platform!</div>
+                </div>
+                
+                <div class="buttons">
+                    <button class="btn btn-secondary" id="prevBtn">上一个</button>
+                    <button class="btn btn-primary" id="nextBtn">下一个</button>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stats-card">
+                    <h3>今日统计</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" id="todayLearned">0</span>
+                            <span class="stat-label">已学习</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="todayRemaining">20</span>
+                            <span class="stat-label">剩余</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalDays">0</span>
+                            <span class="stat-label">连续天数</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>学习历史</h3>
+                <div class="history-list" id="historyList">
+                    <!-- 历史记录将在这里动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
