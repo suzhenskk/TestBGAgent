@@ -15,7 +15,7 @@
 
 ## 🚀 使用方法
 
-1. 打开 `index.html` 文件
+1. 打开 `index.html` 文件（需要本地服务器支持ES模块）
 2. 点击"下一个"按钮学习新单词
 3. 点击🔊按钮听单词发音
 4. 完成20个单词后系统会提示完成
@@ -24,11 +24,62 @@
 ## 📁 文件结构
 
 ```
-├── index.html          # 主页面
-├── styles.css          # 样式文件
-├── script.js           # JavaScript逻辑
-└── README.md          # 说明文档
+├── index.html              # 主页面
+├── styles.css              # 样式文件
+├── data/
+│   └── words.js            # 单词数据库
+├── js/
+│   ├── main.js            # 应用入口点
+│   ├── app.js             # 主应用类
+│   ├── config.js          # 配置常量
+│   ├── services/          # 服务层
+│   │   ├── pronunciationService.js
+│   │   ├── storageService.js
+│   │   └── streakService.js
+│   ├── utils/             # 工具函数
+│   │   ├── dateUtils.js
+│   │   ├── storage.js
+│   │   └── wordUtils.js
+│   └── ui/                # UI管理
+│       └── uiManager.js
+└── README.md              # 说明文档
 ```
+
+## 🏗️ 架构设计
+
+### 模块化结构
+
+项目采用ES6模块化设计，将代码分为以下层次：
+
+1. **数据层** (`data/`)
+   - 单词数据库独立管理
+
+2. **配置层** (`js/config.js`)
+   - 集中管理应用配置和常量
+
+3. **服务层** (`js/services/`)
+   - `pronunciationService.js`: 处理语音播放
+   - `storageService.js`: 管理数据存储
+   - `streakService.js`: 计算连续学习天数
+
+4. **工具层** (`js/utils/`)
+   - `dateUtils.js`: 日期处理工具
+   - `storage.js`: LocalStorage封装
+   - `wordUtils.js`: 单词处理工具
+
+5. **UI层** (`js/ui/`)
+   - `uiManager.js`: 统一管理DOM更新
+
+6. **应用层** (`js/app.js`)
+   - 主应用类，协调各模块
+
+### 代码改进
+
+- ✅ **关注点分离**：每个模块职责单一
+- ✅ **可维护性**：代码结构清晰，易于扩展
+- ✅ **可测试性**：模块化设计便于单元测试
+- ✅ **错误处理**：添加了错误处理和日志
+- ✅ **类型安全**：使用常量避免魔法数字和字符串
 
 ## 🎨 设计特色
 
@@ -54,7 +105,7 @@
 
 - HTML5
 - CSS3 (渐变、动画、响应式)
-- JavaScript (ES6+)
+- JavaScript (ES6+ 模块化)
 - Web Speech API (发音功能)
 - LocalStorage (数据存储)
 
@@ -63,6 +114,24 @@
 - 现代浏览器 (Chrome, Firefox, Safari, Edge)
 - 移动端友好
 - 支持语音播放功能
+- 需要支持ES6模块的浏览器
+
+## 🚀 本地开发
+
+由于使用了ES6模块，需要通过HTTP服务器运行：
+
+```bash
+# 使用Python
+python -m http.server 8000
+
+# 使用Node.js (需要安装http-server)
+npx http-server
+
+# 使用VS Code Live Server扩展
+# 右键index.html -> Open with Live Server
+```
+
+然后访问 `http://localhost:8000`
 
 ## 🎯 学习目标
 
@@ -70,6 +139,15 @@
 - 建立良好的学习习惯
 - 提高英语词汇量
 - 培养语言学习兴趣
+
+## 📝 更新日志
+
+### v2.0 - 重构版本
+- ✨ 模块化代码结构
+- ✨ 分离关注点
+- ✨ 改进错误处理
+- ✨ 优化代码组织
+- ✨ 提取配置和常量
 
 ---
 
