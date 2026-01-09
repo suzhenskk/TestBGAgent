@@ -24,10 +24,11 @@
 ## 📁 文件结构
 
 ```
-├── index.html          # 主页面
-├── styles.css          # 样式文件
-├── script.js           # JavaScript逻辑
-└── README.md          # 说明文档
+├── index.html          # 主页面（入口）
+├── src/
+│   ├── styles.css      # 样式文件
+│   └── script.js       # JavaScript 逻辑
+└── README.md           # 说明文档
 ```
 
 ## 🎨 设计特色
