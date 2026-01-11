@@ -3,66 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日英语学习 - 20个单词打卡</title>
+    <title>清爽待办清单</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="title">🌸 每日英语学习</h1>
-            <div class="progress-info">
-                <span class="date" id="currentDate"></span>
-                <span class="progress" id="progressText">今日进度: 0/20</span>
+    <div class="app">
+        <header class="hero">
+            <div>
+                <p class="hero-date" id="todayDate"></p>
+                <h1>✅ 待办清单</h1>
+                <p class="hero-subtitle">用轻量的节奏，把每一天安排得刚刚好。</p>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-value" id="totalCount">0</span>
+                    <span class="stat-label">全部任务</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="remainingCount">0</span>
+                    <span class="stat-label">待完成</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="completedCount">0</span>
+                    <span class="stat-label">已完成</span>
+                </div>
             </div>
         </header>
 
-        <div class="main-content">
-            <div class="word-card" id="wordCard">
-                <div class="word-section">
-                    <h2 class="word" id="currentWord">Welcome</h2>
-                    <div class="phonetic" id="phonetic">/ˈwelkəm/</div>
-                    <button class="play-btn" id="playBtn">🔊</button>
-                </div>
-                
-                <div class="meaning-section">
-                    <h3 class="meaning" id="meaning">欢迎</h3>
-                    <div class="example" id="example">Welcome to our English learning platform!</div>
-                </div>
-                
-                <div class="buttons">
-                    <button class="btn btn-secondary" id="prevBtn">上一个</button>
-                    <button class="btn btn-primary" id="nextBtn">下一个</button>
-                </div>
-            </div>
+        <main class="content">
+            <section class="composer">
+                <form id="todoForm" class="composer-form">
+                    <input
+                        type="text"
+                        id="todoInput"
+                        placeholder="写下今天最重要的一件事…"
+                        autocomplete="off"
+                        maxlength="120"
+                        required
+                    />
+                    <button type="submit" class="primary-btn">添加任务</button>
+                </form>
+                <p class="composer-hint">支持回车快速添加，点击复选框标记完成。</p>
+            </section>
 
-            <div class="stats-section">
-                <div class="stats-card">
-                    <h3>今日统计</h3>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number" id="todayLearned">0</span>
-                            <span class="stat-label">已学习</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="todayRemaining">20</span>
-                            <span class="stat-label">剩余</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="totalDays">0</span>
-                            <span class="stat-label">连续天数</span>
-                        </div>
-                    </div>
+            <section class="toolbar">
+                <div class="filters" role="tablist">
+                    <button class="filter-btn is-active" data-filter="all" type="button">全部</button>
+                    <button class="filter-btn" data-filter="active" type="button">进行中</button>
+                    <button class="filter-btn" data-filter="completed" type="button">已完成</button>
                 </div>
-            </div>
+                <button class="ghost-btn" id="clearCompleted" type="button">清除已完成</button>
+            </section>
 
-            <div class="history-section">
-                <h3>学习历史</h3>
-                <div class="history-list" id="historyList">
-                    <!-- 历史记录将在这里动态生成 -->
+            <section class="todo-panel">
+                <ul class="todo-list" id="todoList"></ul>
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-illustration">🌤️</div>
+                    <h3>还没有任务</h3>
+                    <p>从一个小目标开始，今天一定会更轻松。</p>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
 
     <script src="script.js"></script>
