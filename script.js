@@ -182,6 +182,8 @@ const wordDatabase = [
     }
 ];
 
+const DAILY_GOAL = 20;
+
 class EnglishLearningApp {
     constructor() {
         this.currentIndex = 0;
@@ -230,7 +232,7 @@ class EnglishLearningApp {
         
         // 检查是否是新的学习日
         if (this.lastStudyDate !== today) {
-            this.todayWords = this.getRandomWords(20);
+            this.todayWords = this.getRandomWords(DAILY_GOAL);
             this.currentIndex = 0;
             this.updateStreak(today);
         } else {
@@ -245,8 +247,30 @@ class EnglishLearningApp {
     }
 
     getRandomWords(count) {
-        const shuffled = [...wordDatabase].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, count);
+        // 优先选择未学习的单词
+        const unlearned = wordDatabase.filter(word => 
+            !this.learnedWords.some(learned => learned.word === word.word)
+        );
+        
+        const shuffledUnlearned = [...unlearned].sort(() => 0.5 - Math.random());
+        
+        // 如果未学习单词足够
+        if (shuffledUnlearned.length >= count) {
+            return shuffledUnlearned.slice(0, count);
+        }
+        
+        // 如果不够，用已学习的单词填充（复习模式）
+        const needed = count - shuffledUnlearned.length;
+        const learnedSource = this.learnedWords.length > 0 ? this.learnedWords : wordDatabase;
+        const shuffledLearned = [...learnedSource].sort(() => 0.5 - Math.random());
+        
+        // 确保返回的是原始数据格式（去掉learnedDate等额外字段，或者保持一致）
+        // 这里简单处理，直接合并
+        return [...shuffledUnlearned, ...shuffledLearned.slice(0, needed).map(w => {
+            // 如果是从learnedWords来的，可能包含learnedDate，这里最好重置为基础数据
+            const baseWord = wordDatabase.find(dbW => dbW.word === w.word);
+            return baseWord || w;
+        })];
     }
 
     updateStreak(today) {
@@ -303,7 +327,7 @@ class EnglishLearningApp {
         localStorage.setItem('todayWords', JSON.stringify(this.todayWords));
         
         // 显示完成消息
-        alert('🎉 恭喜！你今天已经完成了20个单词的学习！');
+        alert(`🎉 恭喜！你今天已经完成了${DAILY_GOAL}个单词的学习！`);
         
         // 重置进度
         this.currentIndex = 0;
@@ -331,9 +355,16 @@ class EnglishLearningApp {
         
         // 更新进度
         const progress = this.currentIndex + 1;
-        document.getElementById('progressText').textContent = `今日进度: ${progress}/20`;
+        document.getElementById('progressText').textContent = `今日进度: ${progress}/${DAILY_GOAL}`;
         document.getElementById('todayLearned').textContent = progress;
-        document.getElementById('todayRemaining').textContent = 20 - progress;
+        document.getElementById('todayRemaining').textContent = Math.max(0, DAILY_GOAL - progress);
+        
+        // 更新进度条
+        const percentage = Math.min(100, (progress / DAILY_GOAL) * 100);
+        const progressFill = document.getElementById('progressFill');
+        if (progressFill) {
+            progressFill.style.width = `${percentage}%`;
+        }
         
         // 更新连续天数
         document.getElementById('totalDays').textContent = this.streak;
