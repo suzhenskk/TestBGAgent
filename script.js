@@ -227,18 +227,21 @@ class EnglishLearningApp {
 
     loadTodayWords() {
         const today = new Date().toDateString();
+        const savedTodayWords = localStorage.getItem('todayWords');
         
         // 检查是否是新的学习日
         if (this.lastStudyDate !== today) {
             this.todayWords = this.getRandomWords(20);
             this.currentIndex = 0;
-            this.updateStreak(today);
-        } else {
+            this.checkStreak(today);
+            localStorage.setItem('todayWords', JSON.stringify(this.todayWords));
+            localStorage.setItem('todayCompleted', 'false');
+            localStorage.setItem('currentIndex', '0');
+        } else if (savedTodayWords) {
             // 恢复今天的学习进度
-            const savedTodayWords = localStorage.getItem('todayWords');
-            if (savedTodayWords) {
-                this.todayWords = JSON.parse(savedTodayWords);
-            }
+            this.todayWords = JSON.parse(savedTodayWords);
+            const savedIndex = localStorage.getItem('currentIndex');
+            this.currentIndex = savedIndex ? parseInt(savedIndex) : 0;
         }
         
         this.updateUI();
@@ -249,16 +252,14 @@ class EnglishLearningApp {
         return shuffled.slice(0, count);
     }
 
-    updateStreak(today) {
+    checkStreak(today) {
         if (this.lastStudyDate) {
             const lastDate = new Date(this.lastStudyDate);
             const currentDate = new Date(today);
             const diffTime = currentDate - lastDate;
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             
-            if (diffDays === 1) {
-                this.streak++;
-            } else if (diffDays > 1) {
+            if (diffDays > 1) {
                 this.streak = 0;
             }
         } else {
@@ -271,8 +272,9 @@ class EnglishLearningApp {
 
     nextWord() {
         if (this.currentIndex < this.todayWords.length - 1) {
-            this.currentIndex++;
             this.markWordAsLearned();
+            this.currentIndex++;
+            localStorage.setItem('currentIndex', this.currentIndex);
             this.updateUI();
         } else if (this.currentIndex === this.todayWords.length - 1) {
             this.markWordAsLearned();
@@ -283,6 +285,7 @@ class EnglishLearningApp {
     prevWord() {
         if (this.currentIndex > 0) {
             this.currentIndex--;
+            localStorage.setItem('currentIndex', this.currentIndex);
             this.updateUI();
         }
     }
@@ -299,14 +302,18 @@ class EnglishLearningApp {
     }
 
     completeToday() {
-        // 保存今天的学习进度
-        localStorage.setItem('todayWords', JSON.stringify(this.todayWords));
+        // 检查今天是否已经完成过，避免重复增加连续天数
+        const isCompleted = localStorage.getItem('todayCompleted') === 'true';
         
-        // 显示完成消息
-        alert('🎉 恭喜！你今天已经完成了20个单词的学习！');
+        if (!isCompleted) {
+            this.streak++;
+            localStorage.setItem('todayCompleted', 'true');
+            this.saveData();
+            alert('🎉 恭喜！你今天已经完成了20个单词的学习！');
+        } else {
+            alert('🎉 你已经完成了今日的学习目标，真棒！');
+        }
         
-        // 重置进度
-        this.currentIndex = 0;
         this.updateUI();
     }
 
@@ -322,6 +329,7 @@ class EnglishLearningApp {
         if (this.todayWords.length === 0) return;
 
         const currentWord = this.todayWords[this.currentIndex];
+        const isTodayCompleted = localStorage.getItem('todayCompleted') === 'true';
         
         // 更新单词卡片
         document.getElementById('currentWord').textContent = currentWord.word;
@@ -330,10 +338,19 @@ class EnglishLearningApp {
         document.getElementById('example').textContent = currentWord.example;
         
         // 更新进度
-        const progress = this.currentIndex + 1;
-        document.getElementById('progressText').textContent = `今日进度: ${progress}/20`;
-        document.getElementById('todayLearned').textContent = progress;
-        document.getElementById('todayRemaining').textContent = 20 - progress;
+        // 如果已完成，显示20/20，否则显示当前索引+1
+        const learnedTodayCount = isTodayCompleted ? 20 : (this.currentIndex + 1);
+        const progressPercentage = (learnedTodayCount / 20) * 100;
+        
+        document.getElementById('progressText').textContent = `今日进度: ${learnedTodayCount}/20`;
+        document.getElementById('todayLearned').textContent = learnedTodayCount;
+        document.getElementById('todayRemaining').textContent = 20 - learnedTodayCount;
+        
+        // 更新进度条
+        const progressFill = document.getElementById('progressFill');
+        if (progressFill) {
+            progressFill.style.width = `${progressPercentage}%`;
+        }
         
         // 更新连续天数
         document.getElementById('totalDays').textContent = this.streak;
@@ -349,7 +366,7 @@ class EnglishLearningApp {
         // 更新按钮状态
         document.getElementById('prevBtn').disabled = this.currentIndex === 0;
         document.getElementById('nextBtn').textContent = 
-            this.currentIndex === this.todayWords.length - 1 ? '完成' : '下一个';
+            (this.currentIndex === this.todayWords.length - 1) ? '完成' : '下一个';
         
         // 更新历史记录
         this.updateHistory();
