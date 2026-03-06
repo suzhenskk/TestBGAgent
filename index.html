@@ -3,67 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日英语学习 - 20个单词打卡</title>
+    <title>待办清单 ToDoList</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="title">🌸 每日英语学习</h1>
-            <div class="progress-info">
-                <span class="date" id="currentDate"></span>
-                <span class="progress" id="progressText">今日进度: 0/20</span>
-            </div>
+    <main class="app">
+        <header class="app-header">
+            <h1>📝 ToDoList</h1>
+            <p>快速记录、完成并管理你的任务</p>
         </header>
 
-        <div class="main-content">
-            <div class="word-card" id="wordCard">
-                <div class="word-section">
-                    <h2 class="word" id="currentWord">Welcome</h2>
-                    <div class="phonetic" id="phonetic">/ˈwelkəm/</div>
-                    <button class="play-btn" id="playBtn">🔊</button>
+        <section class="todo-input-card">
+            <form id="todoForm" class="todo-form" autocomplete="off">
+                <input id="todoInput" type="text" placeholder="输入一个待办事项..." maxlength="120" required>
+                <button type="submit">添加</button>
+            </form>
+            <div class="toolbar">
+                <div class="filters" role="group" aria-label="任务筛选">
+                    <button type="button" class="filter-btn active" data-filter="all">全部</button>
+                    <button type="button" class="filter-btn" data-filter="active">未完成</button>
+                    <button type="button" class="filter-btn" data-filter="completed">已完成</button>
                 </div>
-                
-                <div class="meaning-section">
-                    <h3 class="meaning" id="meaning">欢迎</h3>
-                    <div class="example" id="example">Welcome to our English learning platform!</div>
-                </div>
-                
-                <div class="buttons">
-                    <button class="btn btn-secondary" id="prevBtn">上一个</button>
-                    <button class="btn btn-primary" id="nextBtn">下一个</button>
-                </div>
+                <button id="clearCompletedBtn" type="button" class="clear-btn">清除已完成</button>
             </div>
+        </section>
 
-            <div class="stats-section">
-                <div class="stats-card">
-                    <h3>今日统计</h3>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number" id="todayLearned">0</span>
-                            <span class="stat-label">已学习</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="todayRemaining">20</span>
-                            <span class="stat-label">剩余</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="totalDays">0</span>
-                            <span class="stat-label">连续天数</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="todo-list-card">
+            <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+            <div id="emptyState" class="empty-state">还没有任务，先添加一个吧 ✨</div>
+        </section>
 
-            <div class="history-section">
-                <h3>学习历史</h3>
-                <div class="history-list" id="historyList">
-                    <!-- 历史记录将在这里动态生成 -->
-                </div>
-            </div>
-        </div>
-    </div>
+        <footer class="stats">
+            <span id="totalCount">总计：0</span>
+            <span id="activeCount">未完成：0</span>
+            <span id="completedCount">已完成：0</span>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
