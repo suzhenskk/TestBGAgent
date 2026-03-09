@@ -303,7 +303,7 @@ class EnglishLearningApp {
         localStorage.setItem('todayWords', JSON.stringify(this.todayWords));
         
         // 显示完成消息
-        alert('🎉 恭喜！你今天已经完成了20个单词的学习！');
+        alert('恭喜！你今天已经完成了20个单词的学习！');
         
         // 重置进度
         this.currentIndex = 0;
