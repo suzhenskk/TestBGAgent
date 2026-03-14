@@ -22,10 +22,10 @@ export interface Profile {
 }
 
 export const profile: Profile = {
-  name: "Alex Chen",
-  role: "Product Designer & Developer",
-  bio: "专注于极简主义设计与高性能前端开发的数字工匠。致力于创造直观、优雅且富有深度的用户体验。",
-  email: "alex@example.com",
+  name: "Elara Lin",
+  role: "Product Designer & Creative Coder",
+  bio: "用代码编织美学，用设计传递温度。热爱探索极简主义与情感化交互的融合，致力于创造温暖、治愈且富有生命力的数字体验。",
+  email: "elara@example.com",
   socialLinks: [
     { platform: "twitter", url: "https://twitter.com", label: "Twitter" },
     { platform: "github", url: "https://github.com", label: "GitHub" },

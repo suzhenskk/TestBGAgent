@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ProjectCard } from '../components/ProjectCard';
-import { projects } from '../data/projects';
+import { projects, profile } from '../data/projects';
 import { ArrowDown } from 'lucide-react';
 
 const containerVariants = {
@@ -29,10 +29,10 @@ export const Home = () => {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
-          Crafting digital experiences with purpose and precision.
+          以精准与匠心，<br />雕琢数字体验。
         </h1>
         <p className="text-xl text-gray-500 font-light max-w-2xl mx-auto leading-relaxed">
-          I'm Alex Chen, a multidisciplinary designer and developer focused on creating intuitive, minimal, and impactful digital products.
+          我是 {profile.name}，一名跨界设计师与开发者。专注于打造直观、极简且富有影响力的数字产品。
         </p>
         
         <motion.div 

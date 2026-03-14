@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { profile } from '../data/projects';
 
 export const Navbar = () => {
   const location = useLocation();
@@ -14,12 +15,12 @@ export const Navbar = () => {
           to="/" 
           className="text-xl font-semibold tracking-tight text-gray-900 hover:text-black transition-colors z-10"
         >
-          Alex Chen
+          {profile.name}
         </Link>
         
         <div className="flex items-center space-x-8 z-10">
-          <NavLink to="/" isActive={isHome}>Work</NavLink>
-          <NavLink to="/about" isActive={location.pathname === '/about'}>About</NavLink>
+          <NavLink to="/" isActive={isHome}>作品</NavLink>
+          <NavLink to="/about" isActive={location.pathname === '/about'}>关于</NavLink>
         </div>
       </div>
     </nav>

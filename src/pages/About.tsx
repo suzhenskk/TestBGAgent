@@ -12,7 +12,7 @@ export const About = () => {
           className="mb-12"
         >
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2670&auto=format&fit=crop"
             alt={profile.name}
             className="w-32 h-32 rounded-full object-cover mx-auto lg:mx-0 shadow-lg"
           />
@@ -57,7 +57,7 @@ export const About = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 pt-16 border-t border-gray-100"
         >
-          <h3 className="text-xl font-semibold mb-8">Connect</h3>
+          <h3 className="text-xl font-semibold mb-8">联系我</h3>
           <div className="flex flex-wrap gap-8">
             {profile.socialLinks.map((link) => (
               <a
@@ -74,7 +74,7 @@ export const About = () => {
               href={`mailto:${profile.email}`}
               className="text-lg text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors"
             >
-              Email Me
+              发送邮件
             </a>
           </div>
         </motion.div>

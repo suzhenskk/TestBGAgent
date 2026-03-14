@@ -30,7 +30,7 @@ export const ProjectDetail = () => {
       >
         <Link to="/" className="inline-flex items-center text-gray-500 hover:text-black mb-8 transition-colors group">
           <ArrowLeft className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" />
-          Back to Work
+          返回作品列表
         </Link>
       </motion.div>
 
@@ -59,7 +59,7 @@ export const ProjectDetail = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
         <div className="lg:col-span-1">
-          <h3 className="text-lg font-semibold mb-4">Overview</h3>
+          <h3 className="text-lg font-semibold mb-4">项目概览</h3>
           <div className="flex flex-wrap gap-2 mb-8">
             {project.tags.map(tag => (
               <span key={tag} className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
