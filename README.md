@@ -1,76 +1,57 @@
-# 🌸 每日英语学习网站
+# React + TypeScript + Vite
 
-一个精美的英语学习网站，支持每日打卡20个单词，采用粉色主题设计。
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## ✨ 功能特点
+Currently, two official plugins are available:
 
-- **每日打卡系统**：每天学习20个新单词
-- **粉色主题设计**：美观的粉色渐变界面
-- **单词发音**：支持点击播放单词发音
-- **学习进度跟踪**：实时显示今日学习进度
-- **连续学习天数**：记录连续学习天数
-- **学习历史**：查看最近学习的单词
-- **本地存储**：数据保存在浏览器本地
-- **响应式设计**：支持手机和电脑访问
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 使用方法
+## Expanding the ESLint configuration
 
-1. 打开 `index.html` 文件
-2. 点击"下一个"按钮学习新单词
-3. 点击🔊按钮听单词发音
-4. 完成20个单词后系统会提示完成
-5. 查看学习历史和统计数据
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 📁 文件结构
-
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
-├── index.html          # 主页面
-├── styles.css          # 样式文件
-├── script.js           # JavaScript逻辑
-└── README.md          # 说明文档
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  extends: [
+    // other configs...
+    // Enable lint rules for React
+    reactX.configs['recommended-typescript'],
+    // Enable lint rules for React DOM
+    reactDom.configs.recommended,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
-
-## 🎨 设计特色
-
-- **粉色主题**：使用粉色渐变色彩搭配
-- **卡片式设计**：单词卡片悬浮效果
-- **动画效果**：平滑的过渡动画
-- **现代UI**：简洁美观的界面设计
-
-## 📊 单词数据库
-
-包含30个精选英语单词，涵盖：
-- 积极正面的词汇
-- 生活常用词汇
-- 励志激励词汇
-
-每个单词包含：
-- 英文单词
-- 音标
-- 中文释义
-- 例句
-
-## 🔧 技术栈
-
-- HTML5
-- CSS3 (渐变、动画、响应式)
-- JavaScript (ES6+)
-- Web Speech API (发音功能)
-- LocalStorage (数据存储)
-
-## 📱 兼容性
-
-- 现代浏览器 (Chrome, Firefox, Safari, Edge)
-- 移动端友好
-- 支持语音播放功能
-
-## 🎯 学习目标
-
-- 每天坚持学习20个单词
-- 建立良好的学习习惯
-- 提高英语词汇量
-- 培养语言学习兴趣
-
----
-
-开始你的英语学习之旅吧！🌸
