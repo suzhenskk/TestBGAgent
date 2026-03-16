@@ -1,0 +1,16 @@
+{
+  "name": "Alex Chen",
+  "role": "Senior UX Designer",
+  "bio": "I craft liquid digital experiences that merge aesthetics with functionality.",
+  "skills": [
+    { "category": "Design", "items": ["UI/UX", "Product Design", "Interaction Design", "Design Systems"] },
+    { "category": "Tools", "items": ["Figma", "Protopie", "Spline", "Principle"] },
+    { "category": "Tech", "items": ["HTML/CSS", "React Basics", "Webflow"] }
+  ],
+  "social": [
+    { "platform": "Dribbble", "url": "#", "icon": "Dribbble" },
+    { "platform": "LinkedIn", "url": "#", "icon": "Linkedin" },
+    { "platform": "Twitter", "url": "#", "icon": "Twitter" }
+  ],
+  "email": "hello@alexchen.design"
+}

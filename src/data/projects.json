@@ -1,0 +1,29 @@
+[
+  {
+    "id": "finflow",
+    "title": "FinFlow App",
+    "subtitle": "FinTech • Mobile App",
+    "coverImage": "https://images.unsplash.com/photo-1616077168712-fc6c788df4ee?q=80&w=2072&auto=format&fit=crop",
+    "description": "Redefining personal finance management with liquid interactions.",
+    "tags": ["UX Research", "UI Design"],
+    "date": "2023"
+  },
+  {
+    "id": "nebula",
+    "title": "Nebula OS",
+    "subtitle": "Operating System • Concept",
+    "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+    "description": "A spatial operating system concept for the future of work.",
+    "tags": ["Product Design", "3D"],
+    "date": "2024"
+  },
+  {
+    "id": "eco-track",
+    "title": "EcoTrack",
+    "subtitle": "Sustainability • Web Platform",
+    "coverImage": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2613&auto=format&fit=crop",
+    "description": "Tracking carbon footprint with beautiful data visualization.",
+    "tags": ["Data Viz", "Web Design"],
+    "date": "2023"
+  }
+]
