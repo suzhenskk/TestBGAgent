@@ -207,6 +207,7 @@ class EnglishLearningApp {
             this.learnedWords = data.learnedWords || [];
             this.streak = data.streak || 0;
             this.lastStudyDate = data.lastStudyDate || null;
+            this.currentIndex = data.currentIndex || 0;
         }
     }
 
@@ -214,7 +215,8 @@ class EnglishLearningApp {
         const data = {
             learnedWords: this.learnedWords,
             streak: this.streak,
-            lastStudyDate: this.lastStudyDate
+            lastStudyDate: this.lastStudyDate,
+            currentIndex: this.currentIndex
         };
         localStorage.setItem('englishLearningData', JSON.stringify(data));
     }
@@ -232,12 +234,19 @@ class EnglishLearningApp {
         if (this.lastStudyDate !== today) {
             this.todayWords = this.getRandomWords(20);
             this.currentIndex = 0;
+            localStorage.setItem('todayWords', JSON.stringify(this.todayWords));
             this.updateStreak(today);
         } else {
             // 恢复今天的学习进度
             const savedTodayWords = localStorage.getItem('todayWords');
             if (savedTodayWords) {
                 this.todayWords = JSON.parse(savedTodayWords);
+            } else {
+                // 如果是同一天但没有找到今日单词（可能是之前的数据丢失或bug），重新生成
+                this.todayWords = this.getRandomWords(20);
+                localStorage.setItem('todayWords', JSON.stringify(this.todayWords));
+                this.currentIndex = 0;
+                this.saveData();
             }
         }
         
