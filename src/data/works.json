@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "E-commerce Website Redesign",
+    "description": "A complete redesign of an e-commerce platform with improved user experience and modern UI design. The project focused on enhancing the shopping experience and increasing conversion rates.",
+    "images": ["https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20e-commerce%20website%20design%20with%20clean%20interface%20and%20blue%20color%20scheme&image_size=landscape_16_9", "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=e-commerce%20product%20page%20with%20product%20details%20and%20add%20to%20cart%20button&image_size=landscape_16_9"],
+    "categories": ["web design", "development"],
+    "technologies": "React, TypeScript, Tailwind CSS, Node.js",
+    "link": "#",
+    "createdAt": "2023-06-15"
+  },
+  {
+    "id": "2",
+    "title": "Brand Identity Design",
+    "description": "A comprehensive brand identity design for a startup company, including logo, color palette, typography, and brand guidelines. The design aims to establish a strong visual presence in the market.",
+    "images": ["https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20brand%20identity%20design%20with%20logo%20and%20color%20palette&image_size=landscape_16_9", "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=brand%20guidelines%20document%20with%20typography%20and%20usage%20examples&image_size=landscape_16_9"],
+    "categories": ["graphic design"],
+    "technologies": "Adobe Illustrator, Adobe Photoshop, Figma",
+    "link": "#",
+    "createdAt": "2023-04-22"
+  },
+  {
+    "id": "3",
+    "title": "Mobile App Development",
+    "description": "A mobile application for task management with intuitive UI and seamless user experience. The app allows users to create, organize, and track tasks efficiently.",
+    "images": ["https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20task%20management%20app%20interface%20with%20task%20lists&image_size=portrait_16_9", "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20app%20task%20detail%20page%20with%20due%20date%20and%20priority&image_size=portrait_16_9"],
+    "categories": ["development", "web design"],
+    "technologies": "React Native, TypeScript, Firebase",
+    "link": "#",
+    "createdAt": "2023-08-05"
+  },
+  {
+    "id": "4",
+    "title": "Data Visualization Dashboard",
+    "description": "A data visualization dashboard for a financial company, displaying key metrics and performance indicators. The dashboard provides interactive charts and real-time data updates.",
+    "images": ["https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=data%20visualization%20dashboard%20with%20charts%20and%20metrics&image_size=landscape_16_9", "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=interactive%20chart%20dashboard%20with%20filters%20and%20options&image_size=landscape_16_9"],
+    "categories": ["development", "web design"],
+    "technologies": "React, D3.js, Tailwind CSS",
+    "link": "#",
+    "createdAt": "2023-09-18"
+  },
+  {
+    "id": "5",
+    "title": "Landing Page Design",
+    "description": "A high-converting landing page design for a SaaS product, with compelling copy and engaging visuals. The design focuses on driving user sign-ups and conversions.",
+    "images": ["https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20SaaS%20landing%20page%20with%20hero%20section%20and%20features&image_size=landscape_16_9", "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=landing%20page%20pricing%20section%20with%20call%20to%20action&image_size=landscape_16_9"],
+    "categories": ["web design"],
+    "technologies": "Figma, HTML, CSS, JavaScript",
+    "link": "#",
+    "createdAt": "2023-07-10"
+  },
+  {
+    "id": "6",
+    "title": "Print Marketing Materials",
+    "description": "A set of print marketing materials for a restaurant, including menu design, business cards, and flyers. The design reflects the restaurant's brand identity and ambiance.",
+    "images": ["https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=restaurant%20menu%20design%20with%20elegant%20layout&image_size=landscape_16_9", "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=restaurant%20business%20cards%20and%20flyers%20design&image_size=landscape_16_9"],
+    "categories": ["graphic design"],
+    "technologies": "Adobe InDesign, Adobe Illustrator",
+    "link": "#",
+    "createdAt": "2023-05-03"
+  }
+]
