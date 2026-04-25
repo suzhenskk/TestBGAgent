@@ -11,19 +11,19 @@ const Navigation: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-blue-600">
+        <Link to="/" className="text-2xl font-bold text-pink-600">
           Portfolio
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-800 hover:text-blue-600 transition-colors">
+          <Link to="/" className="text-gray-800 hover:text-pink-600 transition-colors">
             Home
           </Link>
-          <Link to="/works" className="text-gray-800 hover:text-blue-600 transition-colors">
+          <Link to="/works" className="text-gray-800 hover:text-pink-600 transition-colors">
             Works
           </Link>
-          <Link to="/about" className="text-gray-800 hover:text-blue-600 transition-colors">
+          <Link to="/about" className="text-gray-800 hover:text-pink-600 transition-colors">
             About
           </Link>
         </div>
@@ -49,21 +49,21 @@ const Navigation: React.FC = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link 
               to="/" 
-              className="text-gray-800 hover:text-blue-600 transition-colors py-2"
+              className="text-gray-800 hover:text-pink-600 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/works" 
-              className="text-gray-800 hover:text-blue-600 transition-colors py-2"
+              className="text-gray-800 hover:text-pink-600 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Works
             </Link>
             <Link 
               to="/about" 
-              className="text-gray-800 hover:text-blue-600 transition-colors py-2"
+              className="text-gray-800 hover:text-pink-600 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               About

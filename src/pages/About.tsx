@@ -35,11 +35,11 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-pink-50">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-pink-50 to-rose-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -66,7 +66,7 @@ const About: React.FC = () => {
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">5+</div>
+                  <div className="text-3xl font-bold text-pink-600">5+</div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
               </div>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 John Doe
               </h2>
-              <p className="text-blue-600 font-semibold mb-6">
+              <p className="text-pink-600 font-semibold mb-6">
                 Creative Developer & Designer
               </p>
               <p className="text-gray-600 mb-6">
@@ -85,13 +85,13 @@ const About: React.FC = () => {
                 With years of experience in the industry, I've worked with clients ranging from startups to established companies, helping them achieve their design and development goals. I'm passionate about staying up-to-date with the latest trends and technologies to deliver cutting-edge solutions.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                <a href="#" className="flex items-center text-gray-700 hover:text-pink-600 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   john.doe@example.com
                 </a>
-                <a href="#" className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                <a href="#" className="flex items-center text-gray-700 hover:text-pink-600 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>

@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-pink-50 to-rose-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -41,13 +41,13 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
                 to="/works" 
-                className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-8 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
               >
                 View Works
               </Link>
               <Link 
                 to="/about" 
-                className="px-8 py-3 bg-white text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+                className="px-8 py-3 bg-white text-pink-600 border border-pink-600 rounded-lg hover:bg-pink-50 transition-colors"
               >
                 About Me
               </Link>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
           <div className="text-center mt-12">
             <Link 
               to="/works" 
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+              className="inline-flex items-center text-pink-600 hover:text-pink-800 transition-colors"
             >
               View All Works
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -109,14 +109,14 @@ const Home: React.FC = () => {
                 With years of experience in the industry, I've worked with clients ranging from startups to established companies, helping them achieve their design and development goals.
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
-                <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">Web Design</span>
-                <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">Graphic Design</span>
-                <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">Development</span>
-                <span className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm">UI/UX</span>
+                <span className="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">Web Design</span>
+                <span className="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">Graphic Design</span>
+                <span className="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">Development</span>
+                <span className="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">UI/UX</span>
               </div>
               <Link 
                 to="/about" 
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-6 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
               >
                 Learn More
               </Link>
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">5+</div>
+                  <div className="text-3xl font-bold text-pink-600">5+</div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
               </div>

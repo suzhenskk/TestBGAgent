@@ -88,7 +88,7 @@ const Modal: React.FC<ModalProps> = ({ work, isOpen, onClose }) => {
             {work.categories.map((category, index) => (
               <span 
                 key={index} 
-                className="px-3 py-1 bg-blue-100 text-blue-600 text-xs rounded-full"
+                className="px-3 py-1 bg-pink-100 text-pink-600 text-xs rounded-full"
               >
                 {category}
               </span>
@@ -108,7 +108,7 @@ const Modal: React.FC<ModalProps> = ({ work, isOpen, onClose }) => {
               href={work.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-block px-6 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
             >
               View Project
             </a>

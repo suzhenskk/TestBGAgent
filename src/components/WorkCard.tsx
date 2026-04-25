@@ -34,7 +34,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ id, title, description, images, cat
           {categories.map((category, index) => (
             <span 
               key={index} 
-              className="px-3 py-1 bg-blue-100 text-blue-600 text-xs rounded-full"
+              className="px-3 py-1 bg-pink-100 text-pink-600 text-xs rounded-full"
             >
               {category}
             </span>
